@@ -1,8 +1,9 @@
-/* eslint-disable max-lines */
 import * as React from "react";
 import { Stack, Modal, Typography, Button } from "@mui/material";
+import { ModalPmButtons } from "./ModalPmButtons";
+import { ModalBaskButton } from "../buttons/Buttons";
+import { useFood } from "../context/Context";
 import { useState } from "react";
-import { useFood } from "@/context/Context";
 
 const style = {
   position: "absolute" as "absolute",
@@ -15,8 +16,7 @@ const style = {
   backGroundColor: "#FFF",
   p: 4,
 };
-
-export const CardModal = ({
+export const FoodModal = ({
   isOpen,
   onClose,
   food,
@@ -25,13 +25,14 @@ export const CardModal = ({
   onClose: (_e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   food: any;
 }) => {
-  const { setShopFood, shopFood } = useFood();
+  const { bagItem, setBagItem } = useFood();
+  console.log(bagItem, setBagItem);
 
   const [bagCount, setBagCount] = useState(1);
   const { foodName, price, imagePath, sale, ingredients, category, id, stock } =
     food;
 
-  const handlerDataToBag = () => {
+  const HadlerDataToBag = () => {
     const itemInBag = {
       category: category,
       id: id,
@@ -44,8 +45,9 @@ export const CardModal = ({
       count: bagCount,
     };
 
-    setShopFood([...shopFood, itemInBag]);
+    setBagItem([...bagItem, itemInBag]);
   };
+  console.log({ bagItem });
 
   const salePrice = price - (price * sale) / 100;
   const subHandle = () => {
@@ -165,6 +167,12 @@ export const CardModal = ({
                 Тоо
               </Typography>
             </Stack>
+            <ModalPmButtons
+              subHandle={subHandle}
+              sumHandle={sumHandle}
+              value={bagCount}
+            />
+            <ModalBaskButton clickFunc={HadlerDataToBag} onClose={onClose} />
           </Stack>
         </Stack>
       </Modal>

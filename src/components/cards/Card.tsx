@@ -1,6 +1,6 @@
 import { ButtonBase, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { CardModal } from "./CardModal";
+import { FoodModal } from "../modal/FoodModal";
 
 type PropType = {
   food: {
@@ -10,11 +10,11 @@ type PropType = {
     price: number;
     imagePath: string;
     ingredients: string[];
+    stock: number;
     sale: number;
     onClick?: (() => void | undefined) | undefined;
   };
 };
-
 export const FoodCard = ({ food }: PropType) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { foodName, price, imagePath, sale } = food;
@@ -22,6 +22,7 @@ export const FoodCard = ({ food }: PropType) => {
 
   const onCloseModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
+    console.log();
     setIsModalOpen(false);
   };
   const onOpenModal = (e: any) => {
@@ -30,8 +31,8 @@ export const FoodCard = ({ food }: PropType) => {
   };
   return (
     <ButtonBase onClick={onOpenModal}>
-      <Stack gap={"14px"}>
-        <CardModal isOpen={isModalOpen} onClose={onCloseModal} food={food} />
+      <Stack gap={"14px"} marginTop={"30px"}>
+        <FoodModal isOpen={isModalOpen} onClose={onCloseModal} food={food} />
         <Stack
           width={"282px"}
           height={"186px"}
