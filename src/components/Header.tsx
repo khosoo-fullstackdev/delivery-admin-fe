@@ -3,7 +3,7 @@ import { PineConeIcon, LoginIcon } from "./icons/Icons";
 import { Box, Typography, Stack, Container, ButtonBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useRouter } from "next/router";
-import { HeaderButton } from "./buttons/Buttons";
+import { HeaderButton } from "./Buttons";
 import { useFood } from "./context/Context";
 
 export const Header = () => {

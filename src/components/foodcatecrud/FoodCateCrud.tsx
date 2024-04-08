@@ -1,9 +1,8 @@
 import { ButtonBase, Stack, Typography } from "@mui/material";
-import { CategoryData } from "@/utils/dummy-data-cards";
 import { CreateCateIcon, DashboardCateIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { useFood } from "../context/Context";
-import { FoodCard } from "../cards/Card";
+import { FoodCard } from "../Cards";
 import { AddFoodModal } from "./AddFoodModal";
 import { AddCategoryModal } from "./AddCategoryModal";
 import { EmptyMenyComp } from "./EmptyMenuComp";

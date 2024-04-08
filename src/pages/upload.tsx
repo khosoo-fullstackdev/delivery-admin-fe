@@ -3,8 +3,8 @@ import { CircularProgress, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 // import Image from "next/image";
 
-const CLOUD_NAME = "dzgomjjhe";
-const UPLOAD_PRESET = "w0rub0ag";
+const CLOUD_NAME = "dv4s9vhsa";
+const UPLOAD_PRESET = "Gosoo";
 
 const Page = () => {
   const [file, setFile] = useState<File | null>(null);

@@ -1,7 +1,7 @@
 import { Box, ButtonBase, Container, Stack, Typography } from "@mui/material";
 import { FooterIcon, FbIcon, InstaIcon, TwitIcon } from "./icons";
 import { useRouter } from "next/router";
-import { FooterButton } from "./buttons/Buttons";
+import { FooterButton } from "./Buttons";
 
 export const Footer = () => {
   const router = useRouter();

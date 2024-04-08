@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Stack, Modal, Typography, Button } from "@mui/material";
 import { ModalPmButtons } from "./ModalPmButtons";
-import { ModalBaskButton } from "../buttons/Buttons";
+import { ModalBaskButton } from "../Buttons";
 import { useFood } from "../context/Context";
 import { useState } from "react";
 
