@@ -9,7 +9,6 @@ import { useFood } from "./context/Context";
 export const Header = () => {
   const router = useRouter();
   const { bagItem } = useFood();
-  console.log(bagItem);
   return (
     <Stack
       direction={"row"}

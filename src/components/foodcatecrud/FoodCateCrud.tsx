@@ -8,6 +8,8 @@ import { AddCategoryModal } from "./AddCategoryModal";
 import { EmptyMenyComp } from "./EmptyMenuComp";
 
 export const FoodCateCrud = () => {
+  const isTokenValid = localStorage.getItem("token");
+
   interface DataType {
     id: string;
     name: string;
@@ -47,6 +49,7 @@ export const FoodCateCrud = () => {
     e.stopPropagation();
     setIsModalOpenCate(false);
   };
+
   const onOpenModalCate = (e: any) => {
     e.stopPropagation();
     setIsModalOpenCate(true);
@@ -56,6 +59,7 @@ export const FoodCateCrud = () => {
     e.stopPropagation();
     setIsModalOpen(false);
   };
+
   const onOpenModal = (e: any) => {
     e.stopPropagation();
     setIsModalOpen(true);
