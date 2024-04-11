@@ -8,7 +8,7 @@ import { AddCategoryModal } from "./AddCategoryModal";
 import { EmptyMenyComp } from "./EmptyMenuComp";
 
 export const FoodCateCrud = () => {
-  const isTokenValid = localStorage.getItem("token");
+  // const isTokenValid = localStorage.getItem("token");
 
   interface DataType {
     id: string;
